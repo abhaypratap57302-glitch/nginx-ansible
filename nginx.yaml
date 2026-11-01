@@ -1,5 +1,5 @@
 ---
-- name: Install NGINX on slave2
+- name: Install NGINX on slaves
   hosts: slaves
   become: yes
   tasks:
