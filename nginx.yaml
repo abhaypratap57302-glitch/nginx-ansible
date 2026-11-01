@@ -1,0 +1,16 @@
+---
+- name: Install NGINX on slave2
+  hosts: slaves
+  become: yes
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Make sure nginx is running and starts on boot
+      service:
+        name: nginx
+        state: started
+        enabled: yes
